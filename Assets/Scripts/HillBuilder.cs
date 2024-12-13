@@ -2,10 +2,11 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-[RequireComponent(typeof(MeshRenderer), typeof(MeshFilter))]
+[RequireComponent(typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider))]
 public class HillBuilder : MonoBehaviour
 {
     [SerializeField] private float radius;
@@ -20,13 +21,17 @@ public class HillBuilder : MonoBehaviour
     [SerializeField] private AnimationCurve rampCurve;
     [SerializeField] private AnimationCurve widthCurve;
 
+    [SerializeField] private float topAngleStrength;
+    [SerializeField] private float topAngleScale;
     [SerializeField] private Color stone;
     [SerializeField] private Color grass;
     private Vector3[] fPoints;
-    private Vector3[] tPoints;
-    [SerializeField] private float topAngleStrength;
+    [HideInInspector] public Vector3[] tPoints;
     private Vector3[] verts;
     private Color[] colors;
+    public int surfaceIndexStart;
+    public int surfaceIndexEnd;
+
     private int[] tris;
     private Mesh m;
 
@@ -55,6 +60,20 @@ public class HillBuilder : MonoBehaviour
         }
     }
 
+    private MeshCollider _mc;
+    public MeshCollider mc
+    {
+        get
+        {
+            if (_mc == null) TryGetComponent(out _mc);
+            return _mc;
+        }
+        set
+        {
+            _mc = value;
+
+        }
+    }
 
     public void GeneratePoints()
     {
@@ -70,12 +89,15 @@ public class HillBuilder : MonoBehaviour
 
             tPoints[i] = new Vector3(x, height, y);
 
-            float offset = SampleNoise(new Vector2(fPoints[i].x, fPoints[i].z));
-            float toffset = SampleNoise(new Vector2(fPoints[i].x + 100, fPoints[i].z + 100));
+            float offset = SampleNoise(new Vector2(fPoints[i].x, fPoints[i].z), noiseScale);
+
             fPoints[i] += fPoints[i].normalized * noiseWeight * radius * offset;
             tPoints[i] += new Vector3(tPoints[i].x, 0, tPoints[i].z).normalized * noiseWeight * radius * offset;
-            tPoints[i] += new Vector3(tPoints[i].x, 0, tPoints[i].z).normalized * topAngleStrength * toffset;
-
+            if (topAngleScale > 0 && Mathf.Abs(topAngleStrength) > 0)
+            {
+                float toffset = SampleNoise(new Vector2(fPoints[i].x + 100, fPoints[i].z + 100), topAngleScale);
+                tPoints[i] += new Vector3(tPoints[i].x, 0, tPoints[i].z).normalized * topAngleStrength * toffset;
+            }
         }
 
 
@@ -83,37 +105,13 @@ public class HillBuilder : MonoBehaviour
         tris = GenerateTriangles();
         UpdateMesh();
     }
-    private void UpdateMesh()
-    {
 
-
-        if (verts.Length <= 0)
-        {
-            return;
-        }
-
-        if (m == null)
-        {
-            m = new Mesh();
-        }
-        mf.sharedMesh = new Mesh();
-
-        mf.sharedMesh.vertices = verts;
-        mf.sharedMesh.triangles = tris;
-        mf.sharedMesh.colors = colors;
-        //UV's here
-
-        mf.sharedMesh.RecalculateNormals();
-        mf.sharedMesh.RecalculateBounds();
-
-
-    }
     private void CalculateVerticies(out Vector3[] _verts, out Color[] _col)
     {
 
         List<Vector3> res = new List<Vector3>();
         List<Color> colorRes = new List<Color>();
-
+    
 
         for (int i = 0; i < resolution; i++)
         {
@@ -130,7 +128,7 @@ public class HillBuilder : MonoBehaviour
 
         int p = Mathf.CeilToInt((float)resolution / 2);
 
-
+        surfaceIndexStart = res.Count - 1;
         for (int i = 0; i < resolution; i++)
         {
 
@@ -139,14 +137,20 @@ public class HillBuilder : MonoBehaviour
             res.Add(tPoints[(i + 1) % resolution]);
             res.Add(tPoints[i]);
             res.Add(new Vector3(0, height, 0));
+
+
+
+            //add to surface only array
             colorRes.AddRange(Enumerable.Repeat(grass, 3).ToArray());
 
             //==========================================================
 
         }
+        surfaceIndexEnd = res.Count - 1;
+
         if (ramp)
         {
-            int startIndex = rampStartIndex % resolution;
+            int startIndex = Mod(rampStartIndex, resolution);
             int currIndex;
             int nextIndex;
 
@@ -181,8 +185,8 @@ public class HillBuilder : MonoBehaviour
                 //off wall
                 if (i == 0)
                 {
-                    p3 = p1 + fPoints[currIndex].normalized * widthCurve.Evaluate((i + 1) / (float)rampLength) * rampWidth;
-                    bp1 = fPoints[currIndex] + fPoints[currIndex].normalized * widthCurve.Evaluate((i + 1) / (float)rampLength) * rampWidth;
+                    p3 = p1 + fPoints[currIndex].normalized * widthCurve.Evaluate(i / (float)rampLength) * rampWidth;
+                    bp1 = fPoints[currIndex] + fPoints[currIndex].normalized * widthCurve.Evaluate(i / (float)rampLength) * rampWidth;
                 }
                
                 p4 = p2 + fPoints[nextIndex].normalized * widthCurve.Evaluate((i + 1) / (float)rampLength) * rampWidth;
@@ -248,18 +252,37 @@ public class HillBuilder : MonoBehaviour
                 bp1 = bp2;
             }
 
-
-            //res.Add(fPoints[(startIndex + 1) % resolution] + new Vector3(0, rampCurve.Evaluate(i + 1 / (float)rampLength) * height, 0));
-            //res.Add(fPoints[(startIndex + 1) % resolution] + new Vector3(0, rampCurve.Evaluate(i + 1 / (float)rampLength) * height, 0) +fPoints[(startIndex + 1) % resolution].normalized * rampWidth);
-            //res.Add(fPoints[(startIndex)] + fPoints[(startIndex)].normalized * rampWidth);
-
-
         }
 
         _col = colorRes.ToArray();
         _verts = res.ToArray();
-
     }
+
+    private void UpdateMesh()
+    {
+
+
+        if (verts.Length <= 0)
+        {
+            return;
+        }
+
+        if (m == null)
+        {
+            m = new Mesh();
+        }
+        mf.sharedMesh = new Mesh();
+
+        mf.sharedMesh.vertices = verts;
+        mf.sharedMesh.triangles = tris;
+        mf.sharedMesh.colors = colors;
+        //UV's here
+
+        mf.sharedMesh.RecalculateNormals();
+        mf.sharedMesh.RecalculateBounds();
+        mc.sharedMesh = mf.sharedMesh;
+    }
+
     private int[] GenerateTriangles()
     {
         int[] res = new int[verts.Length];
@@ -269,19 +292,24 @@ public class HillBuilder : MonoBehaviour
         }
         return res;
     }
-    public float SampleNoise(Vector2 _point/*local position*/)
+
+    public int Mod(int _val, int _mod)
+    {
+        while (_val < 0)
+        {
+            _val += _mod;
+        }
+        return _val % _mod;
+    }
+    public float SampleNoise(Vector2 _point/*local position*/, float _scale)
     {
         _point += new Vector2(transform.position.x, transform.position.z);
 
-        float offsetx = Mathf.PerlinNoise(_point.x / noiseScale, _point.y / noiseScale) * 2;
+        float offsetx = Mathf.PerlinNoise(_point.x / _scale, _point.y / _scale) * 2;
         offsetx -= 1;
         return offsetx;
     }
-    public void Clean()
-    {
 
-
-    }
 
 
 
