@@ -9,22 +9,35 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider))]
 public class HillBuilder : MonoBehaviour
 {
+    [Header("General")]
     [SerializeField] private float radius;
     [SerializeField] private float height;
     [SerializeField] private int resolution;
+
+
+    [SerializeField] private Color stone;
+    [SerializeField] private Color grass;
+    [Header("-=-=-=-=-=-=-")]
+    [Space]
+    [Header("Noise")]
     [SerializeField] private float noiseScale;
     [SerializeField] private float noiseWeight;
+    [SerializeField] private Vector2 noiseOffset;
+    [Space]
+    [SerializeField] private float topAngleStrength;
+    [SerializeField] private float topAngleScale;
+    [SerializeField] private Vector2 topAngleNoiseOffset;
+    [Header("-=-=-=-=-=-=-")]
+    [Space]
+    [Header("Ramp")]    
     [SerializeField] private bool ramp;
     [SerializeField] private int rampLength;
     [SerializeField] private int rampStartIndex;
     [SerializeField] private float rampWidth;
     [SerializeField] private AnimationCurve rampCurve;
     [SerializeField] private AnimationCurve widthCurve;
-
-    [SerializeField] private float topAngleStrength;
-    [SerializeField] private float topAngleScale;
-    [SerializeField] private Color stone;
-    [SerializeField] private Color grass;
+    [Header("-=-=-=-=-=-=-")]
+    [Space]
     private Vector3[] fPoints;
     [HideInInspector] public Vector3[] tPoints;
     private Vector3[] verts;
@@ -137,8 +150,6 @@ public class HillBuilder : MonoBehaviour
             res.Add(tPoints[(i + 1) % resolution]);
             res.Add(tPoints[i]);
             res.Add(new Vector3(0, height, 0));
-
-
 
             //add to surface only array
             colorRes.AddRange(Enumerable.Repeat(grass, 3).ToArray());
