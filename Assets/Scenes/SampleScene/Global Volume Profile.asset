@@ -1,27 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4822467579254237885
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5485954d14dfb9a4c8ead8edb0ded5b1, type: 3}
-  m_Name: LiftGammaGain
-  m_EditorClassIdentifier: 
-  active: 0
-  lift:
-    m_OverrideState: 1
-    m_Value: {x: 1, y: 0.859609, z: 0.86280036, w: 0}
-  gamma:
-    m_OverrideState: 1
-    m_Value: {x: 0.99022967, y: 1, z: 0.9545479, w: 0}
-  gain:
-    m_OverrideState: 1
-    m_Value: {x: 0.9767509, y: 0.92134595, z: 1, w: 0}
 --- !u!114 &-4033604637919400594
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -40,7 +18,7 @@ MonoBehaviour:
     m_Value: {r: 0.119975105, g: 0.15006137, b: 0.29380047, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.8349056, g: 1, b: 0.96602476, a: 1}
+    m_Value: {r: 0.8352941, g: 0.99382067, b: 1, a: 1}
   balance:
     m_OverrideState: 1
     m_Value: 4
@@ -59,7 +37,7 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {x: 0.8147248, y: 0.8429604, z: 1, w: 0}
+    m_Value: {x: 0.8774412, y: 0.91699487, z: 1, w: 0}
   midtones:
     m_OverrideState: 1
     m_Value: {x: 1, y: 0.97969526, z: 0.82823604, w: 0}
@@ -120,9 +98,9 @@ MonoBehaviour:
   - {fileID: -323226808382424834}
   - {fileID: 5973693307522454328}
   - {fileID: -4033604637919400594}
-  - {fileID: -4822467579254237885}
   - {fileID: -3574783421221171510}
   - {fileID: 5839174756711395682}
+  - {fileID: 3592050617790761812}
 --- !u!114 &634910470538013557
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -142,7 +120,47 @@ MonoBehaviour:
     dimension: 1
   contribution:
     m_OverrideState: 1
-    m_Value: 0.449
+    m_Value: 0.5
+--- !u!114 &3592050617790761812
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c23e3b12dc18c42a140437e53d3951, type: 3}
+  m_Name: Tonemapping
+  m_EditorClassIdentifier: 
+  active: 1
+  mode:
+    m_OverrideState: 1
+    m_Value: 1
+  neutralHDRRangeReductionMode:
+    m_OverrideState: 0
+    m_Value: 2
+  acesPreset:
+    m_OverrideState: 0
+    m_Value: 3
+  hueShiftAmount:
+    m_OverrideState: 0
+    m_Value: 0
+  detectPaperWhite:
+    m_OverrideState: 0
+    m_Value: 0
+  paperWhite:
+    m_OverrideState: 0
+    m_Value: 300
+  detectBrightnessLimits:
+    m_OverrideState: 0
+    m_Value: 1
+  minNits:
+    m_OverrideState: 0
+    m_Value: 0.005
+  maxNits:
+    m_OverrideState: 0
+    m_Value: 1000
 --- !u!114 &5839174756711395682
 MonoBehaviour:
   m_ObjectHideFlags: 3

@@ -1467,7 +1467,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 1, g: 0.93635386, b: 0.79607844, a: 1}
+  m_Color: {r: 1, g: 0.4351852, b: 0, a: 1}
   m_Intensity: 1.2
   m_Range: 10
   m_SpotAngle: 30
@@ -1530,13 +1530,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.94574565, y: 0, z: 0, w: 0.32490805}
+  m_LocalRotation: {x: 0.022819314, y: 0.047099095, z: -0.8987053, w: 0.43541896}
   m_LocalPosition: {x: 0, y: 41.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 142.08, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6, y: 0, z: -128.3}
 --- !u!114 &410087042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56924,16 +56924,148 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e59c47188feee42a9ae402fc489c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTime: 0
-  dayLength: 1
+  currentTime: -0.2877116
+  dayLength: 5
   DayColor: {r: 0, g: 0, b: 0, a: 0}
   NightColor: {r: 0, g: 0, b: 0, a: 0}
-  DayIntensity: 1.2
+  DayIntensity: 1.5
   NightIntensity: 0.2
   nightLight: {fileID: 1919387825}
   dayLight: {fileID: 410087040}
   intensity: 0
-  minMaxSunHeight: {x: 10, y: 170}
+  filteredTimeOfDay: 1
+  minMaxSunHeight: {x: 0, y: 45}
+  minMaxSunAngle: {x: 45, y: 190}
+  sunAngleOverDay:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3317266
+      value: 0.11996592
+      inSlope: 0.53966635
+      outSlope: 0.53966635
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.8066838
+      value: 0.8805768
+      inSlope: 1.0930996
+      outSlope: 1.0930996
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.48311958
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.01571263
+      outSlope: -0.01571263
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  sunHeightOverDay:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 3.8181818
+      outSlope: 3.8181818
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0335731
+    - serializedVersion: 3
+      time: 0.9928589
+      value: -0.0033683777
+      inSlope: -3.8724017
+      outSlope: -3.8724017
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.031176759
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  sunIntensityOverDay:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 5.2660418
+      outSlope: 5.2660418
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.117681295
+    - serializedVersion: 3
+      time: 0.24442455
+      value: 0.700235
+      inSlope: 1.0900998
+      outSlope: 1.0900998
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  sunColorOverHeight:
+    serializedVersion: 2
+    key0: {r: 1, g: 0.26214403, b: 0, a: 1}
+    key1: {r: 1, g: 0.7782956, b: 0.45687324, a: 1}
+    key2: {r: 0.8611859, g: 0.98174757, b: 1, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 12942
+    ctime2: 46866
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  timer: 0
 --- !u!4 &1867093790
 Transform:
   m_ObjectHideFlags: 0
@@ -57109,17 +57241,17 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.81987864, g: 0.79607844, b: 1, a: 1}
-  m_Intensity: 0.15
+  m_Color: {r: 0.6339933, g: 0.5862533, b: 1, a: 1}
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2

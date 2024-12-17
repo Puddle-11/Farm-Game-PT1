@@ -39,8 +39,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _Base: 0
-    - _Fidelity: 2.23
-    - _Foam_Alpha: 1
+    - _Fidelity: 2.28
+    - _Foam_Alpha: 0.794
     - _Height: 0.02
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -48,11 +48,11 @@ Material:
     - _Speed: 0.005
     - _Wave_Foam_Width: 0
     m_Colors:
-    - _DeepColor: {r: 0.2282841, g: 0.27282843, b: 0.3584906, a: 0}
-    - _Foam_Color: {r: 0.7877358, g: 0.9404693, b: 1, a: 0}
+    - _DeepColor: {r: 0.4328905, g: 0.706844, b: 0.72506726, a: 0}
+    - _Foam_Color: {r: 0.7803234, g: 0.9537816, b: 1, a: 0}
     - _ScrollDirection: {r: 1, g: 0, b: 0, a: 0}
     - _SecondaryScroll: {r: 0.5, g: 1, b: 0, a: 0}
-    - _ShallowColor: {r: 0.021715911, g: 0.05416469, b: 0.0754717, a: 0}
+    - _ShallowColor: {r: 0.12560071, g: 0.1220675, b: 0.18598378, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7005217427351440628
