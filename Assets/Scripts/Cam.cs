@@ -23,19 +23,6 @@ public class Cam : MonoBehaviour
         }
 
     }
-    private void Start()
-    {
-
-    }
-    private void Update()
-    {
-        RaycastHit hit = MouseRaycast(500, lm);
-        debugSphere.transform.position = hit.point;
-         debugSphere.GetComponent<MeshRenderer>().material.color = hit.normal == Vector3.up ? Color.green : Color.red;
-
-        
-        
-    }
 
     public RaycastHit MouseRaycast(LayerMask _lm)
     {

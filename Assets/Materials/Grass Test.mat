@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Water 1
-  m_Shader: {fileID: -6465566751694194690, guid: 2ecea4cc104780241835f093d6f9a80b, type: 3}
+  m_Name: Grass Test
+  m_Shader: {fileID: -6465566751694194690, guid: 566a35a619da85e44b72a97304b83f66, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -39,23 +39,19 @@ Material:
     m_Ints: []
     m_Floats:
     - _Base: 0
-    - _Fidelity: 3
-    - _Foam_Alpha: 0.888
-    - _Height: 0.01
+    - _Fidelity: 2
+    - _Noise_Scale: 17.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 134.26
-    - _Speed: 0.005
-    - _Wave_Foam_Width: 0.348
+    - _Speed: 1
+    - _Static_Scale: 723.9
     m_Colors:
-    - _DeepColor: {r: 0.11374155, g: 0.33962262, b: 0.3293553, a: 0}
-    - _Foam_Color: {r: 0.3726415, g: 1, b: 0.88839316, a: 0}
-    - _ScrollDirection: {r: 1, g: 0, b: 0, a: 0}
-    - _SecondaryScroll: {r: 0, g: 1, b: 0, a: 0}
-    - _ShallowColor: {r: 0.055224285, g: 0.091905616, b: 0.16037738, a: 0}
+    - _C1: {r: 0, g: 0, b: 0, a: 0}
+    - _C2: {r: 1, g: 1, b: 1, a: 1}
+    - _scroll_dir: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &7005217427351440628
+--- !u!114 &3987997388157805750
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

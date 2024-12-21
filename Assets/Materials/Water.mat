@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Water
+  m_Shader: {fileID: -6465566751694194690, guid: 2ecea4cc104780241835f093d6f9a80b, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 0
+    - _Base: 0
+    - _Cutoff: 0.497
+    - _Edge_Smoothness: 0.35
+    - _Fidelity: 2.2
+    - _Foam_Alpha: 0
+    - _Foam_Color: 0
+    - _Foam_Depth: 73.2
+    - _Foam_Distance: 0.95
+    - _Foam_Noise_Size: 286.5
+    - _Foam_Scale: 50.11
+    - _Foam_Speed: 0
+    - _Foam_Strength: 0.21
+    - _Height: 0.01
+    - _MountainFidelity: 9
+    - _MountainScale: 106.94
+    - _MountainStrength: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Ripple_Amount: 82.69
+    - _Ripple_Disolve: 6.12
+    - _Ripple_Speed: 1
+    - _Scale: 363.56
+    - _Speed: 0.005
+    - _Wave_Foam_Width: 0
+    m_Colors:
+    - _DeepColor: {r: 0.4328905, g: 0.706844, b: 0.72506726, a: 0}
+    - _Deep_Color: {r: 0, g: 0.23584908, b: 0.18854116, a: 0}
+    - _Foam_Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Foam_Scroll_Dir: {r: 0, g: 1, b: 0, a: 0}
+    - _MountainColorBottom: {r: 0, g: 0, b: 0, a: 0}
+    - _MountainColorTop: {r: 0.634523, g: 0.9150943, b: 0.8584477, a: 0}
+    - _Ripple_Color: {r: 1, g: 1, b: 1, a: 0.8156863}
+    - _ScrollDirection: {r: 1, g: 0, b: 0, a: 0}
+    - _SecondaryScroll: {r: 0.5, g: 1, b: 0, a: 0}
+    - _ShallowColor: {r: 0.12560071, g: 0.1220675, b: 0.18598378, a: 0}
+    - _Shallow_Color: {r: 0.43137255, g: 0.7254902, b: 0.65419024, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!114 &7005217427351440628
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9

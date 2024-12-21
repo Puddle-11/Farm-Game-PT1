@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}
-  m_Name: Shadows
+  m_Name: Shadow
   m_EditorClassIdentifier: 
   k_AssetVersion: 12
   k_AssetPreviousVersion: 12
   m_RendererType: 1
   m_RendererData: {fileID: 0}
   m_RendererDataList:
-  - {fileID: 11400000, guid: ac29083acc4b2744697c48609c07efb6, type: 2}
+  - {fileID: 11400000, guid: a4548ce821c34b44ba018f5b09388ddb, type: 2}
   m_DefaultRendererIndex: 0
-  m_RequireDepthTexture: 0
-  m_RequireOpaqueTexture: 0
+  m_RequireDepthTexture: 1
+  m_RequireOpaqueTexture: 1
   m_OpaqueDownsampling: 1
   m_SupportsTerrainHoles: 1
   m_SupportsHDR: 1
@@ -53,12 +53,12 @@ MonoBehaviour:
   m_AdditionalLightsShadowResolutionTierHigh: 1024
   m_ReflectionProbeBlending: 0
   m_ReflectionProbeBoxProjection: 0
-  m_ShadowDistance: 306
+  m_ShadowDistance: 500
   m_ShadowCascadeCount: 4
-  m_Cascade2Split: 0.14562082
-  m_Cascade3Split: {x: 0.1, y: 0.18771265}
-  m_Cascade4Split: {x: 0.067, y: 0.3484233, z: 0.5995891}
-  m_CascadeBorder: 0
+  m_Cascade2Split: 0.25
+  m_Cascade3Split: {x: 0.1, y: 0.3}
+  m_Cascade4Split: {x: 0.13641669, y: 0.29895866, z: 0.71923}
+  m_CascadeBorder: 0.2
   m_ShadowDepthBias: 1
   m_ShadowNormalBias: 1
   m_AnyShadowsSupported: 1

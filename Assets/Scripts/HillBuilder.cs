@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-[RequireComponent(typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider))]
+[RequireComponent(typeof(MeshRenderer), typeof(MeshFilter))]
 public class HillBuilder : MonoBehaviour
 {
     [Header("General")]
@@ -291,7 +291,11 @@ public class HillBuilder : MonoBehaviour
 
         mf.sharedMesh.RecalculateNormals();
         mf.sharedMesh.RecalculateBounds();
+        if(mc != null)
+        {
+
         mc.sharedMesh = mf.sharedMesh;
+        }
     }
 
     private int[] GenerateTriangles()
@@ -314,7 +318,7 @@ public class HillBuilder : MonoBehaviour
     }
     public float SampleNoise(Vector2 _point/*local position*/, float _scale)
     {
-        _point += new Vector2(transform.position.x, transform.position.z);
+        _point += new Vector2(noiseOffset.x, noiseOffset.y);
 
         float offsetx = Mathf.PerlinNoise(_point.x / _scale, _point.y / _scale) * 2;
         offsetx -= 1;

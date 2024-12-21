@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 85f00f6083edcfd47903e09ff17066c5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 84faaeed38beab74e837be193fcd422e, type: 2}
     - target: {fileID: 919132149155446097, guid: 85f00f6083edcfd47903e09ff17066c5, type: 3}
       propertyPath: m_Name
       value: FamilyHouse
@@ -70,6 +74,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85f00f6083edcfd47903e09ff17066c5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8137476238396088231}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 85f00f6083edcfd47903e09ff17066c5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2344830346120366169}
   m_SourcePrefab: {fileID: 100100000, guid: 85f00f6083edcfd47903e09ff17066c5, type: 3}
 --- !u!1 &4694366594754625260 stripped
 GameObject:
@@ -118,3 +125,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 10, z: 3}
   m_Center: {x: 0, y: 5, z: -1.5}
+--- !u!114 &2344830346120366169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4694366594754625260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f3f1e326d32eb43bff0246739ba670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  residents: []
+  residentsInHouse: 0
+  residentPrefab: {fileID: 756032766699902606, guid: ef5b6fe00c9a1b042a1589534b5c5af8, type: 3}
+  houseHoldHouses: []
+  basePopulation: 2
+  recallTime: 0
+  startTime: 0.3

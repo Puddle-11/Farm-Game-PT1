@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-1140538511968852806
+--- !u!114 &-393007489887619467
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,14 +20,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_Grass
-  m_Shader: {fileID: -6465566751694194690, guid: 566a35a619da85e44b72a97304b83f66, type: 3}
+  m_Name: Shader Graphs_ColorOverPos
+  m_Shader: {fileID: -6465566751694194690, guid: 3d9ceba2ab80d7c48b57dd8be5f0c91e, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 2
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -51,15 +51,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Base: 0
-    - _Fidelity: 3
-    - _Noise_Scale: 0.2
+    - _Base: -0.3
+    - _Fidelity: 10
+    - _Influence: 0.17
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Speed: 0.01
+    - _Scale: 0.24
     m_Colors:
-    - _C1: {r: 0.5764706, g: 0.74509805, b: 0.2901961, a: 0}
-    - _C2: {r: 0.49554634, g: 0.6226415, b: 0.27901387, a: 1}
-    - _scroll_dir: {r: 1, g: 0, b: 0, a: 0}
+    - _Dark: {r: 0.5764706, g: 0.74509805, b: 0.2901961, a: 0}
+    - _Light: {r: 0.0373907, g: 0.047169805, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -43,7 +43,7 @@ public class Forest : MonoBehaviour
                             Matrix4x4.identity *
                             Matrix4x4.Translate(hit.point) *
                             Matrix4x4.Rotate(Quaternion.AngleAxis(Random.Range(0, 360), Vector3.up)) *
-                            Matrix4x4.Scale(Vector3.one);
+                            Matrix4x4.Scale(Vector3.one *  Random.Range(sizeRange.x, sizeRange.y));
 
 
                         if (ClosestRelative(matrixTempList.ToArray(), matrixTemp) > 1 / treeDensity)
