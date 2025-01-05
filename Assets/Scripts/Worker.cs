@@ -99,7 +99,5 @@ public class Worker : MonoBehaviour
                 break;
         }
         return false;
-
-
     }
 }

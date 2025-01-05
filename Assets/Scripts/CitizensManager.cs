@@ -25,10 +25,11 @@ public class CitizensManager : MonoBehaviour
         GameObject worker = Instantiate(citizenPrefab, transform.position, Quaternion.identity);
         Worker workerComp = worker.GetComponent<Worker>();
         allWorkers.Add(workerComp);
-        workerComp.SetHome(this);
+
+      //  workerComp.SetHome(this);
         workerComp.SetName(GlobalVariables.instance.GetDefaultName());
 
-        ForceSetState(workerComp, WorkerState.atHome);
+        //ForceSetState(workerComp, WorkerState.atHome);
         workerComp.StartDay();
     }
 
