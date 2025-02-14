@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d0f793b51086a94086027f0a207b7bb, type: 2}
+  - {fileID: 2100000, guid: 0bbae1f53f52a2f498ea7ea51c52bf4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -133,6 +133,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   name: 
+  currentMood: 0
+  currentActivity: 0
 --- !u!195 &2254000356406311573
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -219,7 +221,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d0f793b51086a94086027f0a207b7bb, type: 2}
+  - {fileID: 2100000, guid: 0bbae1f53f52a2f498ea7ea51c52bf4c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -62768,6 +62768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allWorkers: []
+  citizenPrefab: {fileID: 0}
 --- !u!1 &1697169858
 GameObject:
   m_ObjectHideFlags: 0
@@ -64541,7 +64542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: -0.2877116
-  dayLength: 0.5
+  dayLength: 50
   DayColor: {r: 0, g: 0, b: 0, a: 0}
   NightColor: {r: 0, g: 0, b: 0, a: 0}
   DayIntensity: 1.5
