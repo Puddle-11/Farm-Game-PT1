@@ -13,7 +13,6 @@ public class ConeMeshGenEditor : Editor
         if (target == null) return;
         Undo.RecordObject(_target, "Change Cone Mesh Generator Editor");
 
-
         float newRadius = EditorGUILayout.FloatField("Radius", _target.radius);
         if (newRadius != _target.radius)  _target.radius = newRadius;
 

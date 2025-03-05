@@ -12,7 +12,6 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider))]
 public class ConeMeshGen : MonoBehaviour
 {
-
     private float _radius;
     public float radius
     {
@@ -25,7 +24,6 @@ public class ConeMeshGen : MonoBehaviour
             BakeMesh();
         }
     }
-
     private float _depth;
     public float depth
     {
@@ -51,6 +49,7 @@ public class ConeMeshGen : MonoBehaviour
     private Vector2 _scale;
     public Vector2 scale
     {
+
         get
         {
             return _scale;
@@ -59,9 +58,9 @@ public class ConeMeshGen : MonoBehaviour
         {
             _scale = new Vector2(Mathf.Clamp(value.x, 0.001f, Mathf.Infinity), Mathf.Clamp(value.y, 0.001f, Mathf.Infinity));
             BakeMesh();
+
         }
     }
-
     private Vector3[] points; //points in local position (of object)
     private Vector3[] verts; //verticies of all triangles in local position (contains duplicate verticies for better uv wrapping in edge cases)
     private int[] tris; //all triangle indicies
