@@ -64542,7 +64542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: -0.2877116
-  dayLength: 50
+  dayLength: 5
   DayColor: {r: 0, g: 0, b: 0, a: 0}
   NightColor: {r: 0, g: 0, b: 0, a: 0}
   DayIntensity: 1.5
@@ -64664,7 +64664,7 @@ MonoBehaviour:
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 0
-    ctime1: 12942
+    ctime1: 37201
     ctime2: 46866
     ctime3: 0
     ctime4: 0
