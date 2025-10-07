@@ -11,6 +11,9 @@
         },
         {
             "m_Id": "5b395b0274454d788ac0ea9313f8d3c8"
+        },
+        {
+            "m_Id": "bff7c16ac73141fa97e561549fd7b624"
         }
     ],
     "m_Keywords": [],
@@ -53,6 +56,9 @@
         },
         {
             "m_Id": "09b407a676fc406a8e013060cd2cc86e"
+        },
+        {
+            "m_Id": "0acabccdfe0f4632b2083773e823508c"
         }
     ],
     "m_GroupDatas": [],
@@ -70,6 +76,20 @@
                     "m_Id": "da6c459a388242e0b455743f272838cb"
                 },
                 "m_SlotId": 2
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "0acabccdfe0f4632b2083773e823508c"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "da6c459a388242e0b455743f272838cb"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -295,6 +315,27 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector2MaterialSlot",
+    "m_ObjectId": "0578ff2ace7141789a6982f972ced074",
+    "m_Id": 0,
+    "m_DisplayName": "UVIn",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "09b407a676fc406a8e013060cd2cc86e",
     "m_Group": {
@@ -326,6 +367,42 @@
     },
     "m_Property": {
         "m_Id": "5b395b0274454d788ac0ea9313f8d3c8"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "0acabccdfe0f4632b2083773e823508c",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -1572.0,
+            "y": 206.0,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "0578ff2ace7141789a6982f972ced074"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "bff7c16ac73141fa97e561549fd7b624"
     }
 }
 
@@ -890,6 +967,9 @@
         },
         {
             "m_Id": "5b395b0274454d788ac0ea9313f8d3c8"
+        },
+        {
+            "m_Id": "bff7c16ac73141fa97e561549fd7b624"
         }
     ]
 }
@@ -1056,6 +1136,34 @@
         "e31": 0.0,
         "e32": 0.0,
         "e33": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector2ShaderProperty",
+    "m_ObjectId": "bff7c16ac73141fa97e561549fd7b624",
+    "m_Guid": {
+        "m_GuidSerialized": "aa6f5bb2-1fea-4215-a8e3-abbba40795af"
+    },
+    "m_Name": "UVIn",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "UVIn",
+    "m_DefaultReferenceName": "_UVIn",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 0.0
     }
 }
 

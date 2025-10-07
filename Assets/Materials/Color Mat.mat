@@ -51,9 +51,21 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Cutoff: 3.12
+    - _Disolve: 2.83
+    - _Dither: 0.05
     - _Gamma: 2.2
+    - _GrassScale: 0.15
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _RippleSpeed: 0.51
+    - _Speed1: 1
+    - _Speed2: 1
+    - _ThreshHold: 0.92
+    m_Colors:
+    - _MinMaxHeight: {r: -0.8, g: 19.96, b: 0, a: 0}
+    - _ScrollDir: {r: 0.5, g: 1, b: 0, a: 0}
+    - _ScrollDir1: {r: 0.5, g: -1, b: 0, a: 0}
+    - _TopColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
